@@ -49,7 +49,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                                         <state key="normal" title="👊"/>
                                                         <connections>
-                                                            <action selector="userChoiceRock:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EvW-XA-IIv"/>
+                                                            <action selector="userChoiceButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EvW-XA-IIv"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyB-SF-2dG">
@@ -57,7 +57,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                                         <state key="normal" title="✋"/>
                                                         <connections>
-                                                            <action selector="userChoicePaper:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MkV-0t-reu"/>
+                                                            <action selector="userChoiceButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Drc-2x-dAY"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jc8-1V-fPg">
@@ -65,7 +65,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                                         <state key="normal" title="✌️"/>
                                                         <connections>
-                                                            <action selector="userChoiceScissors:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2BJ-Eo-L4v"/>
+                                                            <action selector="userChoiceButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xld-eu-Le7"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
