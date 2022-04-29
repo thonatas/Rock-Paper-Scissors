@@ -38,4 +38,17 @@ enum GameState: Int {
             return UIColor(hex: "FFFFDD")
         }
     }
+    
+    var buttonColor: UIColor {
+        switch self {
+        case .start:
+            return UIColor(hex: "4B7BE5")
+        case .victory:
+            return UIColor(hex: "069A8E")
+        case .defeat:
+            return UIColor(hex: "FF6FB5")
+        case .draw:
+            return UIColor(hex: "FFD36E")
+        }
+    }
 }

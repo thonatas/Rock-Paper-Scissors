@@ -35,7 +35,7 @@ class GameViewController: UIViewController {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 27, weight: .regular)
         label.text = GameState.start.title
-        label.textColor = .white
+        label.textColor = .black
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -92,8 +92,10 @@ class GameViewController: UIViewController {
     private lazy var playAgainButtom: UIButton = {
         let button = UIButton()
         button.setTitle("Play Again", for: .normal)
+        button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(playAgainButton), for: .touchUpInside)
         button.isHidden = true
+        button.layer.cornerRadius = 8.0
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -148,6 +150,8 @@ private extension GameViewController {
         let robotChoice = userChoice.statusOfGame().robotChoice
         changeLayoutByState(gameState)
         robotChoiceImageView.image = robotChoice.icon
+        playAgainButtom.backgroundColor = gameState.buttonColor
+        playAgainButtom.setTitleColor(gameState == .draw ? .darkGray : .white, for: .normal)
     }
     
     func changeLayoutByState(_ gameState: GameState) {
@@ -192,7 +196,7 @@ private extension GameViewController {
             buttonsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             buttonsStackView.heightAnchor.constraint(equalToConstant: 100),
             
-            playAgainButtom.topAnchor.constraint(equalTo: buttonsStackView.bottomAnchor, constant: 20),
+            playAgainButtom.topAnchor.constraint(equalTo: buttonsStackView.bottomAnchor, constant: 40),
             playAgainButtom.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             playAgainButtom.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             playAgainButtom.heightAnchor.constraint(equalToConstant: 50),
