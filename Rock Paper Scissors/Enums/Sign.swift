@@ -46,15 +46,16 @@ enum Sign: String, CaseIterable {
         }
     }
     
-    func statusOfGame() -> GameState {
+    func statusOfGame() -> (gameState: GameState, robotChoice: Sign) {
         let robotChoice = randomSign()
         let isUserWinner = self.toggle == robotChoice
+        var gameState: GameState = isUserWinner ? .victory : .defeat
         
         if self == robotChoice {
-            return .draw
+            gameState = .draw
         }
         
-        return isUserWinner ? .victory : .defeat
+        return (gameState: gameState, robotChoice: robotChoice)
     }
 }
 

@@ -16,7 +16,6 @@ class GameViewController: UIViewController {
         imageView.clipsToBounds = true
         imageView.layer.masksToBounds = false
         imageView.layer.cornerRadius = 8
-        imageView.backgroundColor = .red
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -28,7 +27,6 @@ class GameViewController: UIViewController {
         imageView.clipsToBounds = true
         imageView.layer.masksToBounds = false
         imageView.layer.cornerRadius = 8
-        imageView.backgroundColor = .green
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -72,7 +70,7 @@ class GameViewController: UIViewController {
         imageView.image = Sign.paper.icon
         imageView.tag = Sign.paper.tag
         imageView.isUserInteractionEnabled = true
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -85,7 +83,7 @@ class GameViewController: UIViewController {
         imageView.image = Sign.scissors.icon
         imageView.tag = Sign.scissors.tag
         imageView.isUserInteractionEnabled = true
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -95,81 +93,71 @@ class GameViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Play Again", for: .normal)
         button.addTarget(self, action: #selector(playAgainButton), for: .touchUpInside)
+        button.isHidden = true
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
-    // MARK: - Actions
-    @objc
-    private func userChoiceButtonPressed(_ sender: UITapGestureRecognizer) {
-        guard let tag = sender.view?.tag else { return }
-        print(Sign.allCases[tag])
-//        guard let userChoice = sender.currentTitle else { return }
-//        playGame(userChoice)
-//        hideUserButtons(true)
-//        sender.isHidden.toggle()
-//        sender.isEnabled = false
-//        enableTextFieldsButton(false)
-
-    }
-    
-    @objc
-    private func playAgainButton() {
-//        hideUserButtons(false)
-//        enableUserButtons()
-//        changeLayoutByState(keyState: 0)
-    }
+    // MARK: - Constants and Variables
+    private var userImagesViews = [UIImageView]()
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.buildViewHierarchy()
         self.buildConstraints()
-        self.view.backgroundColor = GameState.start.background
+        self.setInitialUI()
+        self.userImagesViews = [rockImageView, paperImageView, scissorsImageView]
     }
+}
 
-    // MARK: - Methods
-//    func playGame(_ userChoice: String) {
-//        let robotChoice = randomSign()
-//        let result = statusOfGame(userChoice, robotChoice)
-//        changeLayoutByState(keyState: result.rawValue)
-//        textFieldRobotSign.text = robotChoice
-//    }
-//
-//    func changeLayoutByState(keyState: Int) {
-//        viewBackground.backgroundColor = colors[keyState]
-//        textFieldGameState.text = textsGameState[keyState]
-//    }
-//
-//    func hideUserButtons(_ isHidden: Bool) {
-//        buttonPaper.isHidden = isHidden
-//        buttonRock.isHidden = isHidden
-//        buttonScissors.isHidden = isHidden
-//        buttonPlayAgain.isHidden.toggle()
-//        textFieldRobotSign.isHidden = !isHidden
-//    }
-//
-//    func enableUserButtons() {
-//        buttonPaper.isEnabled = true
-//        buttonRock.isEnabled = true
-//        buttonScissors.isEnabled = true
-//    }
-//
-//    func enableTextFieldsButton(_ isEnable: Bool) {
-//        textFieldRobot.isEnabled = isEnable
-//        textFieldRobotSign.isEnabled = isEnable
-//        textFieldGameState.isEnabled = isEnable
-//    }
-//
-//    func updateUI() {
-//        buttonPlayAgain.isHidden = true
-//        textFieldRobotSign.isHidden = true
-//        textFieldRobotSign.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
-//    }
+// MARK: - Functions
+private extension GameViewController {
+    func setInitialUI() {
+        changeLayoutByState(.start)
+        hideUserButtons(false)
+    }
+    
+    func hideUserButtons(_ isHidden: Bool) {
+        self.userImagesViews.forEach { imageView in
+            imageView.isHidden = isHidden
+            imageView.isUserInteractionEnabled = !isHidden
+        }
+        self.playAgainButtom.isHidden = !isHidden
+        self.robotChoiceImageView.isHidden = !isHidden
+    }
+    
+    @objc
+    func userChoiceButtonPressed(_ sender: UITapGestureRecognizer) {
+        guard let view = sender.view else { return }
+        let signSelected = Sign.allCases[view.tag]
+        playGame(signSelected)
+        hideUserButtons(true)
+        view.isHidden = false
+        view.isUserInteractionEnabled = false
+    }
+    
+    @objc
+    func playAgainButton() {
+        hideUserButtons(false)
+        setInitialUI()
+    }
+    
+    func playGame(_ userChoice: Sign) {
+        let gameState = userChoice.statusOfGame().gameState
+        let robotChoice = userChoice.statusOfGame().robotChoice
+        changeLayoutByState(gameState)
+        robotChoiceImageView.image = robotChoice.icon
+    }
+    
+    func changeLayoutByState(_ gameState: GameState) {
+        view.backgroundColor = gameState.background
+        gameStateLabel.text = gameState.title
+    }
 }
 
 // MARK: - Layout
-extension GameViewController {
+private extension GameViewController {
     func buildViewHierarchy() {
         self.view.addSubview(robotImageView)
         self.view.addSubview(robotChoiceImageView)
