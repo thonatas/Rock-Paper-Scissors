@@ -8,22 +8,36 @@
 import UIKit
 import GameplayKit
 
-enum Sign: String {
+enum Sign: String, CaseIterable {
     case rock = "👊"
     case paper = "✋"
     case scissors = "✌️"
-    case none = ""
+    
+    var toggle: Sign {
+        switch self {
+        case .rock:
+            return .scissors
+        case .paper:
+            return .rock
+        case .scissors:
+            return .paper
+        }
+    }
+    
+    func statusOfGame() -> GameState {
+        let robotChoice = randomSign()
+        let isUserWinner = self.toggle == robotChoice
+        
+        if self == robotChoice {
+            return .draw
+        }
+        
+        return isUserWinner ? .victory : .defeat
+    }
 }
 
-func randomSign() -> String {
-    let randomChoice = GKRandomDistribution(lowestValue: 0, highestValue: 2)
-    let sign = randomChoice.nextInt()
-    
-    if sign == 0 {
-        return "👊"
-    } else if sign == 1 {
-        return "✋"
-    } else {
-        return "✌️"
-    }
+func randomSign() -> Sign {
+    let signs = Sign.allCases
+    let index = GKRandomDistribution(lowestValue: 0, highestValue: signs.count - 1).nextInt()
+    return signs[index]
 }
