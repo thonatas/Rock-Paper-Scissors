@@ -146,8 +146,9 @@ private extension GameViewController {
     }
     
     func playGame(_ userChoice: Sign) {
-        let gameState = userChoice.statusOfGame().gameState
-        let robotChoice = userChoice.statusOfGame().robotChoice
+        let statusOfGame = userChoice.statusOfGame()
+        let gameState = statusOfGame.gameState
+        let robotChoice = statusOfGame.robotChoice
         changeLayoutByState(gameState)
         robotChoiceImageView.image = robotChoice.icon
         playAgainButtom.backgroundColor = gameState.buttonColor
