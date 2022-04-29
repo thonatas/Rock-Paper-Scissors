@@ -24,6 +24,28 @@ enum Sign: String, CaseIterable {
         }
     }
     
+    var icon: UIImage? {
+        switch self {
+        case .rock:
+            return UIImage(systemName: "r.square")
+        case .paper:
+            return UIImage(systemName: "p.square")
+        case .scissors:
+            return UIImage(systemName: "s.square")
+        }
+    }
+    
+    var tag: Int {
+        switch self {
+        case .rock:
+            return 0
+        case .paper:
+            return 1
+        case .scissors:
+            return 2
+        }
+    }
+    
     func statusOfGame() -> GameState {
         let robotChoice = randomSign()
         let isUserWinner = self.toggle == robotChoice

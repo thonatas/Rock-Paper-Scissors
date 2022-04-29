@@ -77,33 +77,41 @@
 		1864AB5B25A4A2A500AE3A17 /* Rock Paper Scissors */ = {
 			isa = PBXGroup;
 			children = (
-				1864AB5C25A4A2A500AE3A17 /* AppDelegate.swift */,
-				1864AB5E25A4A2A500AE3A17 /* SceneDelegate.swift */,
-				1864AB8325A4A39500AE3A17 /* Models */,
-				1864AB8425A4A39C00AE3A17 /* Controllers */,
+				18C6C315281C304100CA2B4D /* Common */,
+				18C6C316281C305600CA2B4D /* Scene */,
+				1864AB8325A4A39500AE3A17 /* Enums */,
 				1857BEDE25A6033C00B010BA /* Screenshot */,
-				1864AB6525A4A2A600AE3A17 /* Assets.xcassets */,
-				1864AB6725A4A2A600AE3A17 /* LaunchScreen.storyboard */,
 				1864AB6A25A4A2A600AE3A17 /* Info.plist */,
 			);
 			path = "Rock Paper Scissors";
 			sourceTree = "<group>";
 		};
-		1864AB8325A4A39500AE3A17 /* Models */ = {
+		1864AB8325A4A39500AE3A17 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
 				1864AB7525A4A2FB00AE3A17 /* GameState.swift */,
 				1864AB7825A4A30100AE3A17 /* Sign.swift */,
 			);
-			path = Models;
+			path = Enums;
 			sourceTree = "<group>";
 		};
-		1864AB8425A4A39C00AE3A17 /* Controllers */ = {
+		18C6C315281C304100CA2B4D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1864AB5C25A4A2A500AE3A17 /* AppDelegate.swift */,
+				1864AB5E25A4A2A500AE3A17 /* SceneDelegate.swift */,
+				1864AB6525A4A2A600AE3A17 /* Assets.xcassets */,
+				1864AB6725A4A2A600AE3A17 /* LaunchScreen.storyboard */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		18C6C316281C305600CA2B4D /* Scene */ = {
 			isa = PBXGroup;
 			children = (
 				189EFE3A25A4A526009428C0 /* GameViewController.swift */,
 			);
-			path = Controllers;
+			path = Scene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
