@@ -29,13 +29,13 @@ enum GameState: Int {
     var background: UIColor {
         switch self {
         case .start:
-            return #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+            return UIColor(hex: "81F5FF")
         case .victory:
-            return #colorLiteral(red: 0.5843137503, green: 0.8235294223, blue: 0.4196078479, alpha: 1)
+            return UIColor(hex: "A0FFE6")
         case .defeat:
-            return #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
+            return UIColor(hex: "FFD5E5")
         case .draw:
-            return #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+            return UIColor(hex: "FFFFDD")
         }
     }
 }
