@@ -6,16 +6,25 @@
 //
 
 import UIKit
+import GameplayKit
 
 class GameViewController: UIViewController {
     //MARK: - UI Components
+    private lazy var backgroundView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .gray.withAlphaComponent(0.2)
+        view.layer.cornerRadius = 8
+        view.layer.borderColor = UIColor.systemGray.cgColor
+        view.layer.borderWidth = 0.5
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     private lazy var robotImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.image = UIImage(systemName: "heart")
         imageView.clipsToBounds = true
         imageView.layer.masksToBounds = false
-        imageView.layer.cornerRadius = 8
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -23,7 +32,6 @@ class GameViewController: UIViewController {
     private lazy var robotChoiceImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.image = UIImage(systemName: "star.fill")
         imageView.clipsToBounds = true
         imageView.layer.masksToBounds = false
         imageView.layer.cornerRadius = 8
@@ -54,7 +62,7 @@ class GameViewController: UIViewController {
         let imageView = UIImageView()
         let tap = UITapGestureRecognizer(target: self, action: #selector(userChoiceButtonPressed(_:)))
         imageView.addGestureRecognizer(tap)
-        imageView.image = Sign.rock.icon
+        imageView.image = Sign.rock.userIcon
         imageView.tag = Sign.rock.tag
         imageView.isUserInteractionEnabled = true
         imageView.contentMode = .scaleAspectFit
@@ -67,7 +75,7 @@ class GameViewController: UIViewController {
         let imageView = UIImageView()
         let tap = UITapGestureRecognizer(target: self, action: #selector(userChoiceButtonPressed(_:)))
         imageView.addGestureRecognizer(tap)
-        imageView.image = Sign.paper.icon
+        imageView.image = Sign.paper.userIcon
         imageView.tag = Sign.paper.tag
         imageView.isUserInteractionEnabled = true
         imageView.contentMode = .scaleAspectFit
@@ -80,7 +88,7 @@ class GameViewController: UIViewController {
         let imageView = UIImageView()
         let tap = UITapGestureRecognizer(target: self, action: #selector(userChoiceButtonPressed(_:)))
         imageView.addGestureRecognizer(tap)
-        imageView.image = Sign.scissors.icon
+        imageView.image = Sign.scissors.userIcon
         imageView.tag = Sign.scissors.tag
         imageView.isUserInteractionEnabled = true
         imageView.contentMode = .scaleAspectFit
@@ -116,6 +124,8 @@ class GameViewController: UIViewController {
 // MARK: - Functions
 private extension GameViewController {
     func setInitialUI() {
+        let index = GKRandomDistribution(lowestValue: 1, highestValue: 15).nextInt()
+        robotImageView.image = UIImage(named: "robot-\(index)")
         changeLayoutByState(.start)
         hideUserButtons(false)
     }
@@ -150,7 +160,7 @@ private extension GameViewController {
         let gameState = statusOfGame.gameState
         let robotChoice = statusOfGame.robotChoice
         changeLayoutByState(gameState)
-        robotChoiceImageView.image = robotChoice.icon
+        robotChoiceImageView.image = robotChoice.robotIcon
         playAgainButtom.backgroundColor = gameState.buttonColor
         playAgainButtom.setTitleColor(gameState == .draw ? .darkGray : .white, for: .normal)
     }
@@ -164,6 +174,7 @@ private extension GameViewController {
 // MARK: - Layout
 private extension GameViewController {
     func buildViewHierarchy() {
+        self.view.addSubview(backgroundView)
         self.view.addSubview(robotImageView)
         self.view.addSubview(robotChoiceImageView)
         self.view.addSubview(gameStateLabel)
@@ -178,13 +189,18 @@ private extension GameViewController {
         NSLayoutConstraint.activate([
             robotImageView.topAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
             robotImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            robotImageView.widthAnchor.constraint(equalToConstant: 100),
-            robotImageView.heightAnchor.constraint(equalToConstant: 100),
+            robotImageView.widthAnchor.constraint(equalToConstant: 140),
+            robotImageView.heightAnchor.constraint(equalToConstant: 140),
             
-            robotChoiceImageView.topAnchor.constraint(equalTo: robotImageView.bottomAnchor, constant: 20),
+            backgroundView.centerXAnchor.constraint(equalTo: robotImageView.centerXAnchor),
+            backgroundView.centerYAnchor.constraint(equalTo: robotImageView.centerYAnchor),
+            backgroundView.widthAnchor.constraint(equalToConstant: 160),
+            backgroundView.heightAnchor.constraint(equalToConstant: 160),
+            
+            robotChoiceImageView.topAnchor.constraint(equalTo: robotImageView.bottomAnchor, constant: 30),
             robotChoiceImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            robotChoiceImageView.widthAnchor.constraint(equalToConstant: 100),
-            robotChoiceImageView.heightAnchor.constraint(equalToConstant: 100),
+            robotChoiceImageView.widthAnchor.constraint(equalToConstant: 75),
+            robotChoiceImageView.heightAnchor.constraint(equalToConstant: 75),
             
             gameStateLabel.topAnchor.constraint(equalTo: robotChoiceImageView.bottomAnchor, constant: 10),
             gameStateLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
@@ -195,7 +211,7 @@ private extension GameViewController {
             buttonsStackView.topAnchor.constraint(equalTo: gameStateLabel.bottomAnchor, constant: 20),
             buttonsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             buttonsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            buttonsStackView.heightAnchor.constraint(equalToConstant: 100),
+            buttonsStackView.heightAnchor.constraint(equalToConstant: 75),
             
             playAgainButtom.topAnchor.constraint(equalTo: buttonsStackView.bottomAnchor, constant: 40),
             playAgainButtom.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -203,5 +219,7 @@ private extension GameViewController {
             playAgainButtom.heightAnchor.constraint(equalToConstant: 50),
             playAgainButtom.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -100)
         ])
+        
+        self.backgroundView.sendSubviewToBack(robotImageView)
     }
 }

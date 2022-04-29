@@ -24,14 +24,25 @@ enum Sign: String, CaseIterable {
         }
     }
     
-    var icon: UIImage? {
+    var userIcon: UIImage? {
         switch self {
         case .rock:
-            return UIImage(systemName: "r.square")
+            return UIImage(named: "user-rock")
         case .paper:
-            return UIImage(systemName: "p.square")
+            return UIImage(named: "user-paper")
         case .scissors:
-            return UIImage(systemName: "s.square")
+            return UIImage(named: "user-scissors")
+        }
+    }
+    
+    var robotIcon: UIImage? {
+        switch self {
+        case .rock:
+            return UIImage(named: "robot-rock")
+        case .paper:
+            return UIImage(named: "robot-paper")
+        case .scissors:
+            return UIImage(named: "robot-scissors")
         }
     }
     
