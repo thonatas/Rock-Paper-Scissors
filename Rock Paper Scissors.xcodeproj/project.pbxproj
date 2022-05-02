@@ -20,13 +20,14 @@
 		1885AFE3281FFA2200E97DC5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885AFE2281FFA2200E97DC5 /* SettingsViewController.swift */; };
 		1885AFE52820395E00E97DC5 /* ScoreboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885AFE42820395E00E97DC5 /* ScoreboardView.swift */; };
 		1885AFE82820496300E97DC5 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885AFE72820496300E97DC5 /* ResultViewController.swift */; };
+		1885AFEB2820546500E97DC5 /* loser.json in Resources */ = {isa = PBXBuildFile; fileRef = 1885AFE92820546500E97DC5 /* loser.json */; };
+		1885AFEC2820546500E97DC5 /* winner.json in Resources */ = {isa = PBXBuildFile; fileRef = 1885AFEA2820546500E97DC5 /* winner.json */; };
 		189C340E281C78C600D36AC3 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189C340D281C78C600D36AC3 /* UIColor+Extension.swift */; };
 		189EFE3B25A4A526009428C0 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189EFE3A25A4A526009428C0 /* GameViewController.swift */; };
-		96DA8F77CAF7E07605953A09 /* libPods-Rock Paper Scissors.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 181D27AF5D2C598073C8177C /* libPods-Rock Paper Scissors.a */; };
+		23E892825A3B84BA68AF0501 /* Pods_Rock_Paper_Scissors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE81DA2B3045F1A2EF97A7B /* Pods_Rock_Paper_Scissors.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		181D27AF5D2C598073C8177C /* libPods-Rock Paper Scissors.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Rock Paper Scissors.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1857BEDF25A6034F00B010BA /* Screenshot-main.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Screenshot-main.jpeg"; sourceTree = "<group>"; };
 		1857BEE025A6034F00B010BA /* Screenshot-defeat.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Screenshot-defeat.jpeg"; sourceTree = "<group>"; };
 		1857BEE125A6034F00B010BA /* Screenshot-victory.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Screenshot-victory.jpeg"; sourceTree = "<group>"; };
@@ -42,10 +43,13 @@
 		1885AFE2281FFA2200E97DC5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1885AFE42820395E00E97DC5 /* ScoreboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardView.swift; sourceTree = "<group>"; };
 		1885AFE72820496300E97DC5 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		1885AFE92820546500E97DC5 /* loser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loser.json; sourceTree = "<group>"; };
+		1885AFEA2820546500E97DC5 /* winner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = winner.json; sourceTree = "<group>"; };
 		189C340D281C78C600D36AC3 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		189EFE3A25A4A526009428C0 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		746E6CE8FCDC4CD11DFF9EE8 /* Pods-Rock Paper Scissors.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rock Paper Scissors.debug.xcconfig"; path = "Target Support Files/Pods-Rock Paper Scissors/Pods-Rock Paper Scissors.debug.xcconfig"; sourceTree = "<group>"; };
 		7FF37028F00DE4E224AAC549 /* Pods-Rock Paper Scissors.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rock Paper Scissors.release.xcconfig"; path = "Target Support Files/Pods-Rock Paper Scissors/Pods-Rock Paper Scissors.release.xcconfig"; sourceTree = "<group>"; };
+		AFE81DA2B3045F1A2EF97A7B /* Pods_Rock_Paper_Scissors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rock_Paper_Scissors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96DA8F77CAF7E07605953A09 /* libPods-Rock Paper Scissors.a in Frameworks */,
+				23E892825A3B84BA68AF0501 /* Pods_Rock_Paper_Scissors.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +141,8 @@
 				189EFE3A25A4A526009428C0 /* GameViewController.swift */,
 				1885AFE2281FFA2200E97DC5 /* SettingsViewController.swift */,
 				1885AFE72820496300E97DC5 /* ResultViewController.swift */,
+				1885AFE92820546500E97DC5 /* loser.json */,
+				1885AFEA2820546500E97DC5 /* winner.json */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -144,7 +150,7 @@
 		2B4E0D1382F036112F19CB1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				181D27AF5D2C598073C8177C /* libPods-Rock Paper Scissors.a */,
+				AFE81DA2B3045F1A2EF97A7B /* Pods_Rock_Paper_Scissors.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -169,6 +175,7 @@
 				1864AB5525A4A2A500AE3A17 /* Sources */,
 				1864AB5625A4A2A500AE3A17 /* Frameworks */,
 				1864AB5725A4A2A500AE3A17 /* Resources */,
+				63868356E95259EE803418DB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -222,6 +229,8 @@
 				1857BEE425A6034F00B010BA /* Screenshot-defeat.jpeg in Resources */,
 				1864AB6925A4A2A600AE3A17 /* LaunchScreen.storyboard in Resources */,
 				1864AB6625A4A2A600AE3A17 /* Assets.xcassets in Resources */,
+				1885AFEC2820546500E97DC5 /* winner.json in Resources */,
+				1885AFEB2820546500E97DC5 /* loser.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +257,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63868356E95259EE803418DB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rock Paper Scissors/Pods-Rock Paper Scissors-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rock Paper Scissors/Pods-Rock Paper Scissors-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rock Paper Scissors/Pods-Rock Paper Scissors-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

@@ -136,7 +136,8 @@ class GameViewController: UIViewController {
     private var resultGame = GameState.start {
         didSet {
             if resultGame == .victory || resultGame == .defeat {
-                let viewController = SettingsViewController()
+                let viewController = ResultViewController(state: self.resultGame)
+                viewController.delegate = self
                 viewController.modalPresentationStyle = .overFullScreen
                 self.present(viewController, animated: true)
             }
@@ -242,6 +243,19 @@ private extension GameViewController {
         }
         if robotScore == maximumGamesQuantity {
             self.resultGame = .defeat
+        }
+    }
+}
+
+// MARK: - Result Delegate
+extension GameViewController: ResultViewControllerDelegate {
+    func didGetResult() {
+        DispatchQueue.main.async {
+            self.resultGame = .start
+            self.userScore = 0
+            self.robotScore = 0
+            self.setScoreGame(.start)
+            self.setInitialUI()
         }
     }
 }

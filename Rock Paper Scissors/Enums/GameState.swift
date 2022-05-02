@@ -51,4 +51,15 @@ enum GameState: Int {
             return UIColor(hex: "FFD36E")
         }
     }
+    
+    var resultText: String {
+        switch self {
+        case .victory:
+            return "Won 😄!"
+        case .defeat:
+            return "You lost 🙁!"
+        default:
+            return ""
+        }
+    }
 }

@@ -2,5 +2,6 @@
 # platform :ios, '9.0'
 
 target 'Rock Paper Scissors' do
+  use_frameworks!
   pod 'lottie-ios', '~> 2.5'
 end
