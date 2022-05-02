@@ -20,6 +20,12 @@ class GameViewController: UIViewController {
         return view
     }()
     
+    private lazy var scoreboardView: ScoreboardView = {
+        let scoreboardView = ScoreboardView()
+        scoreboardView.translatesAutoresizingMaskIntoConstraints = false
+        return scoreboardView
+    }()
+    
     private lazy var settingsImageView: UIImageView = {
         let imageView = UIImageView()
         let color = UIColor(hex: "383838")
@@ -111,11 +117,11 @@ class GameViewController: UIViewController {
         return imageView
     }()
     
-    private lazy var playAgainButtom: UIButton = {
+    private lazy var nextTurnButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Play Again", for: .normal)
+        button.setTitle("Próxima Rodada", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.addTarget(self, action: #selector(applyNow), for: .touchUpInside)
+        button.addTarget(self, action: #selector(nextTurnButtonTapped), for: .touchUpInside)
         button.isHidden = true
         button.layer.cornerRadius = 8.0
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -124,6 +130,18 @@ class GameViewController: UIViewController {
     
     // MARK: - Constants and Variables
     private var userImagesViews = [UIImageView]()
+    private var userScore = 0
+    private var robotScore = 0
+    private var maximumGamesQuantity: Int?
+    private var resultGame = GameState.start {
+        didSet {
+            if resultGame == .victory || resultGame == .defeat {
+                let viewController = SettingsViewController()
+                viewController.modalPresentationStyle = .overFullScreen
+                self.present(viewController, animated: true)
+            }
+        }
+    }
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -131,17 +149,29 @@ class GameViewController: UIViewController {
         self.buildViewHierarchy()
         self.buildConstraints()
         self.setInitialUI()
+        self.setRobotImage()
+        self.scoreboardView.setup()
         self.userImagesViews = [rockImageView, paperImageView, scissorsImageView]
+        self.getGamesQuantity()
     }
 }
 
 // MARK: - Functions
 private extension GameViewController {
     func setInitialUI() {
-        let index = GKRandomDistribution(lowestValue: 1, highestValue: 15).nextInt()
-        robotImageView.image = UIImage(named: "robot-\(index)")
         changeLayoutByState(.start)
         hideUserButtons(false)
+    }
+    
+    func setRobotImage() {
+        let index = GKRandomDistribution(lowestValue: 1, highestValue: 15).nextInt()
+        robotImageView.image = UIImage(named: "robot-\(index)")
+    }
+    
+    func getGamesQuantity() {
+        let gamesQuantities = [3, 5, 7]
+        let index = UserDefaults.standard.integer(forKey: "gamesKey")
+        self.maximumGamesQuantity = gamesQuantities[index]
     }
     
     func hideUserButtons(_ isHidden: Bool) {
@@ -149,8 +179,9 @@ private extension GameViewController {
             imageView.isHidden = isHidden
             imageView.isUserInteractionEnabled = !isHidden
         }
-        self.playAgainButtom.isHidden = !isHidden
+        self.nextTurnButton.isHidden = !isHidden
         self.robotChoiceImageView.isHidden = !isHidden
+        self.settingsImageView.isHidden = isHidden
     }
     
     @objc
@@ -171,7 +202,7 @@ private extension GameViewController {
     }
     
     @objc
-    func playAgainButton() {
+    func nextTurnButtonTapped() {
         hideUserButtons(false)
         setInitialUI()
     }
@@ -182,13 +213,36 @@ private extension GameViewController {
         let robotChoice = statusOfGame.robotChoice
         changeLayoutByState(gameState)
         robotChoiceImageView.image = robotChoice.robotIcon
-        playAgainButtom.backgroundColor = gameState.buttonColor
-        playAgainButtom.setTitleColor(gameState == .draw ? .darkGray : .white, for: .normal)
+        nextTurnButton.backgroundColor = gameState.buttonColor
+        nextTurnButton.setTitleColor(gameState == .draw ? .darkGray : .white, for: .normal)
+        setScoreGame(gameState)
     }
     
     func changeLayoutByState(_ gameState: GameState) {
         view.backgroundColor = gameState.background
         gameStateLabel.text = gameState.title
+    }
+    
+    func setScoreGame(_ state: GameState) {
+        if state == .victory {
+            userScore += 1
+        }
+        if state == .defeat {
+            robotScore += 1
+        }
+        scoreboardView.setup(userScore: userScore, robotScore: robotScore)
+        scoreboardView.layoutIfNeeded()
+        goResultGame()
+    }
+    
+    func goResultGame() {
+        guard let maximumGamesQuantity = maximumGamesQuantity else { return }
+        if userScore == maximumGamesQuantity {
+            self.resultGame = .victory
+        }
+        if robotScore == maximumGamesQuantity {
+            self.resultGame = .defeat
+        }
     }
 }
 
@@ -196,6 +250,7 @@ private extension GameViewController {
 private extension GameViewController {
     func buildViewHierarchy() {
         self.view.addSubview(backgroundView)
+        self.view.addSubview(scoreboardView)
         self.view.addSubview(settingsImageView)
         self.view.addSubview(robotImageView)
         self.view.addSubview(robotChoiceImageView)
@@ -204,7 +259,7 @@ private extension GameViewController {
         self.buttonsStackView.addArrangedSubview(rockImageView)
         self.buttonsStackView.addArrangedSubview(paperImageView)
         self.buttonsStackView.addArrangedSubview(scissorsImageView)
-        self.view.addSubview(playAgainButtom)
+        self.view.addSubview(nextTurnButton)
     }
     
     func buildConstraints() {
@@ -214,17 +269,21 @@ private extension GameViewController {
             settingsImageView.widthAnchor.constraint(equalToConstant: 50),
             settingsImageView.heightAnchor.constraint(equalToConstant: 50),
             
-            robotImageView.topAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            scoreboardView.topAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            scoreboardView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            scoreboardView.widthAnchor.constraint(equalToConstant: 150),
+            scoreboardView.heightAnchor.constraint(equalToConstant: 50),
+            
+            robotImageView.topAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.topAnchor, constant: 150),
             robotImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             robotImageView.widthAnchor.constraint(equalToConstant: 140),
-            robotImageView.heightAnchor.constraint(equalToConstant: 140),
             
             backgroundView.centerXAnchor.constraint(equalTo: robotImageView.centerXAnchor),
             backgroundView.centerYAnchor.constraint(equalTo: robotImageView.centerYAnchor),
             backgroundView.widthAnchor.constraint(equalToConstant: 160),
             backgroundView.heightAnchor.constraint(equalToConstant: 160),
             
-            robotChoiceImageView.topAnchor.constraint(equalTo: robotImageView.bottomAnchor, constant: 30),
+            robotChoiceImageView.topAnchor.constraint(greaterThanOrEqualTo: robotImageView.bottomAnchor, constant: 80),
             robotChoiceImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             robotChoiceImageView.widthAnchor.constraint(equalToConstant: 75),
             robotChoiceImageView.heightAnchor.constraint(equalToConstant: 75),
@@ -240,11 +299,11 @@ private extension GameViewController {
             buttonsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             buttonsStackView.heightAnchor.constraint(equalToConstant: 75),
             
-            playAgainButtom.topAnchor.constraint(equalTo: buttonsStackView.bottomAnchor, constant: 40),
-            playAgainButtom.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            playAgainButtom.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            playAgainButtom.heightAnchor.constraint(equalToConstant: 50),
-            playAgainButtom.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -100)
+            nextTurnButton.topAnchor.constraint(greaterThanOrEqualTo: buttonsStackView.bottomAnchor, constant: 40),
+            nextTurnButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            nextTurnButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            nextTurnButton.heightAnchor.constraint(equalToConstant: 50),
+            nextTurnButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -150)
         ])
         
         self.backgroundView.sendSubviewToBack(robotImageView)

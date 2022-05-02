@@ -18,6 +18,8 @@
 		1864AB7625A4A2FB00AE3A17 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864AB7525A4A2FB00AE3A17 /* GameState.swift */; };
 		1864AB7925A4A30100AE3A17 /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864AB7825A4A30100AE3A17 /* Sign.swift */; };
 		1885AFE3281FFA2200E97DC5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885AFE2281FFA2200E97DC5 /* SettingsViewController.swift */; };
+		1885AFE52820395E00E97DC5 /* ScoreboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885AFE42820395E00E97DC5 /* ScoreboardView.swift */; };
+		1885AFE82820496300E97DC5 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885AFE72820496300E97DC5 /* ResultViewController.swift */; };
 		189C340E281C78C600D36AC3 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189C340D281C78C600D36AC3 /* UIColor+Extension.swift */; };
 		189EFE3B25A4A526009428C0 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189EFE3A25A4A526009428C0 /* GameViewController.swift */; };
 		96DA8F77CAF7E07605953A09 /* libPods-Rock Paper Scissors.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 181D27AF5D2C598073C8177C /* libPods-Rock Paper Scissors.a */; };
@@ -38,6 +40,8 @@
 		1864AB7525A4A2FB00AE3A17 /* GameState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		1864AB7825A4A30100AE3A17 /* Sign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
 		1885AFE2281FFA2200E97DC5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		1885AFE42820395E00E97DC5 /* ScoreboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardView.swift; sourceTree = "<group>"; };
+		1885AFE72820496300E97DC5 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		189C340D281C78C600D36AC3 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		189EFE3A25A4A526009428C0 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		746E6CE8FCDC4CD11DFF9EE8 /* Pods-Rock Paper Scissors.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rock Paper Scissors.debug.xcconfig"; path = "Target Support Files/Pods-Rock Paper Scissors/Pods-Rock Paper Scissors.debug.xcconfig"; sourceTree = "<group>"; };
@@ -91,6 +95,7 @@
 				18C6C315281C304100CA2B4D /* Common */,
 				18C6C316281C305600CA2B4D /* Scene */,
 				1864AB8325A4A39500AE3A17 /* Enums */,
+				1885AFE628203BAE00E97DC5 /* Reusable Views */,
 				1857BEDE25A6033C00B010BA /* Screenshot */,
 				1864AB6A25A4A2A600AE3A17 /* Info.plist */,
 			);
@@ -104,6 +109,14 @@
 				1864AB7825A4A30100AE3A17 /* Sign.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		1885AFE628203BAE00E97DC5 /* Reusable Views */ = {
+			isa = PBXGroup;
+			children = (
+				1885AFE42820395E00E97DC5 /* ScoreboardView.swift */,
+			);
+			path = "Reusable Views";
 			sourceTree = "<group>";
 		};
 		18C6C315281C304100CA2B4D /* Common */ = {
@@ -123,6 +136,7 @@
 			children = (
 				189EFE3A25A4A526009428C0 /* GameViewController.swift */,
 				1885AFE2281FFA2200E97DC5 /* SettingsViewController.swift */,
+				1885AFE72820496300E97DC5 /* ResultViewController.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -141,7 +155,6 @@
 				746E6CE8FCDC4CD11DFF9EE8 /* Pods-Rock Paper Scissors.debug.xcconfig */,
 				7FF37028F00DE4E224AAC549 /* Pods-Rock Paper Scissors.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -250,7 +263,9 @@
 				1864AB7925A4A30100AE3A17 /* Sign.swift in Sources */,
 				189C340E281C78C600D36AC3 /* UIColor+Extension.swift in Sources */,
 				1864AB5D25A4A2A500AE3A17 /* AppDelegate.swift in Sources */,
+				1885AFE52820395E00E97DC5 /* ScoreboardView.swift in Sources */,
 				1864AB5F25A4A2A500AE3A17 /* SceneDelegate.swift in Sources */,
+				1885AFE82820496300E97DC5 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
