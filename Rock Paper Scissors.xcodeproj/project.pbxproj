@@ -17,6 +17,7 @@
 		1864AB6925A4A2A600AE3A17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1864AB6725A4A2A600AE3A17 /* LaunchScreen.storyboard */; };
 		1864AB7625A4A2FB00AE3A17 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864AB7525A4A2FB00AE3A17 /* GameState.swift */; };
 		1864AB7925A4A30100AE3A17 /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864AB7825A4A30100AE3A17 /* Sign.swift */; };
+		1885AFE3281FFA2200E97DC5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885AFE2281FFA2200E97DC5 /* SettingsViewController.swift */; };
 		189C340E281C78C600D36AC3 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189C340D281C78C600D36AC3 /* UIColor+Extension.swift */; };
 		189EFE3B25A4A526009428C0 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189EFE3A25A4A526009428C0 /* GameViewController.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 		1864AB6A25A4A2A600AE3A17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1864AB7525A4A2FB00AE3A17 /* GameState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		1864AB7825A4A30100AE3A17 /* Sign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
+		1885AFE2281FFA2200E97DC5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		189C340D281C78C600D36AC3 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		189EFE3A25A4A526009428C0 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				189EFE3A25A4A526009428C0 /* GameViewController.swift */,
+				1885AFE2281FFA2200E97DC5 /* SettingsViewController.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 			files = (
 				189EFE3B25A4A526009428C0 /* GameViewController.swift in Sources */,
 				1864AB7625A4A2FB00AE3A17 /* GameState.swift in Sources */,
+				1885AFE3281FFA2200E97DC5 /* SettingsViewController.swift in Sources */,
 				1864AB7925A4A30100AE3A17 /* Sign.swift in Sources */,
 				189C340E281C78C600D36AC3 /* UIColor+Extension.swift in Sources */,
 				1864AB5D25A4A2A500AE3A17 /* AppDelegate.swift in Sources */,
@@ -337,6 +341,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BJFSMC5J9X;
 				INFOPLIST_FILE = "Rock Paper Scissors/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -356,6 +361,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BJFSMC5J9X;
 				INFOPLIST_FILE = "Rock Paper Scissors/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
