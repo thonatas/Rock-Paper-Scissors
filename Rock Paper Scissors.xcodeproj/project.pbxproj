@@ -20,9 +20,11 @@
 		1885AFE3281FFA2200E97DC5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885AFE2281FFA2200E97DC5 /* SettingsViewController.swift */; };
 		189C340E281C78C600D36AC3 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189C340D281C78C600D36AC3 /* UIColor+Extension.swift */; };
 		189EFE3B25A4A526009428C0 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189EFE3A25A4A526009428C0 /* GameViewController.swift */; };
+		96DA8F77CAF7E07605953A09 /* libPods-Rock Paper Scissors.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 181D27AF5D2C598073C8177C /* libPods-Rock Paper Scissors.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		181D27AF5D2C598073C8177C /* libPods-Rock Paper Scissors.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Rock Paper Scissors.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1857BEDF25A6034F00B010BA /* Screenshot-main.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Screenshot-main.jpeg"; sourceTree = "<group>"; };
 		1857BEE025A6034F00B010BA /* Screenshot-defeat.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Screenshot-defeat.jpeg"; sourceTree = "<group>"; };
 		1857BEE125A6034F00B010BA /* Screenshot-victory.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Screenshot-victory.jpeg"; sourceTree = "<group>"; };
@@ -38,6 +40,8 @@
 		1885AFE2281FFA2200E97DC5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		189C340D281C78C600D36AC3 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		189EFE3A25A4A526009428C0 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		746E6CE8FCDC4CD11DFF9EE8 /* Pods-Rock Paper Scissors.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rock Paper Scissors.debug.xcconfig"; path = "Target Support Files/Pods-Rock Paper Scissors/Pods-Rock Paper Scissors.debug.xcconfig"; sourceTree = "<group>"; };
+		7FF37028F00DE4E224AAC549 /* Pods-Rock Paper Scissors.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rock Paper Scissors.release.xcconfig"; path = "Target Support Files/Pods-Rock Paper Scissors/Pods-Rock Paper Scissors.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96DA8F77CAF7E07605953A09 /* libPods-Rock Paper Scissors.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +72,8 @@
 			children = (
 				1864AB5B25A4A2A500AE3A17 /* Rock Paper Scissors */,
 				1864AB5A25A4A2A500AE3A17 /* Products */,
+				3DDF22FC2EF9DF881E3AD0FF /* Pods */,
+				2B4E0D1382F036112F19CB1E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +127,24 @@
 			path = Scene;
 			sourceTree = "<group>";
 		};
+		2B4E0D1382F036112F19CB1E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				181D27AF5D2C598073C8177C /* libPods-Rock Paper Scissors.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3DDF22FC2EF9DF881E3AD0FF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				746E6CE8FCDC4CD11DFF9EE8 /* Pods-Rock Paper Scissors.debug.xcconfig */,
+				7FF37028F00DE4E224AAC549 /* Pods-Rock Paper Scissors.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -127,6 +152,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1864AB6D25A4A2A600AE3A17 /* Build configuration list for PBXNativeTarget "Rock Paper Scissors" */;
 			buildPhases = (
+				55755488C27F40B3CDEC9E2E /* [CP] Check Pods Manifest.lock */,
 				1864AB5525A4A2A500AE3A17 /* Sources */,
 				1864AB5625A4A2A500AE3A17 /* Frameworks */,
 				1864AB5725A4A2A500AE3A17 /* Resources */,
@@ -187,6 +213,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		55755488C27F40B3CDEC9E2E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Rock Paper Scissors-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1864AB5525A4A2A500AE3A17 /* Sources */ = {
@@ -335,6 +386,7 @@
 		};
 		1864AB6E25A4A2A600AE3A17 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 746E6CE8FCDC4CD11DFF9EE8 /* Pods-Rock Paper Scissors.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -355,6 +407,7 @@
 		};
 		1864AB6F25A4A2A600AE3A17 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FF37028F00DE4E224AAC549 /* Pods-Rock Paper Scissors.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
