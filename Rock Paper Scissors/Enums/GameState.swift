@@ -16,13 +16,13 @@ enum GameState: Int {
     var title: String {
         switch self {
         case .start:
-            return "Rock, Paper or Scissors?"
+            return "Pedra, Papel ou Tesoura?"
         case .victory:
-            return "Won 😄!"
+            return "Você ganhou 😄!"
         case .defeat:
-            return "You lost 🙁!"
+            return "Você perdeu 🙁!"
         case .draw:
-            return "Draw 😐!!!"
+            return "Empatou 😐!!!"
         }
     }
 
@@ -55,9 +55,9 @@ enum GameState: Int {
     var resultText: String {
         switch self {
         case .victory:
-            return "Won 😄!"
+            return "Você ganhou a Partida 😄!"
         case .defeat:
-            return "You lost 🙁!"
+            return "Você perdeu a Partida 🙁!"
         default:
             return ""
         }
