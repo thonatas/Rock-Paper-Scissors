@@ -3,29 +3,36 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1857BEE325A6034F00B010BA /* Screenshot-main.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1857BEDF25A6034F00B010BA /* Screenshot-main.jpeg */; };
-		1857BEE425A6034F00B010BA /* Screenshot-defeat.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1857BEE025A6034F00B010BA /* Screenshot-defeat.jpeg */; };
-		1857BEE525A6034F00B010BA /* Screenshot-victory.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1857BEE125A6034F00B010BA /* Screenshot-victory.jpeg */; };
-		1857BEE625A6034F00B010BA /* Screenshot-draw.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 1857BEE225A6034F00B010BA /* Screenshot-draw.jpeg */; };
 		1864AB5D25A4A2A500AE3A17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864AB5C25A4A2A500AE3A17 /* AppDelegate.swift */; };
 		1864AB5F25A4A2A500AE3A17 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864AB5E25A4A2A500AE3A17 /* SceneDelegate.swift */; };
 		1864AB6625A4A2A600AE3A17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1864AB6525A4A2A600AE3A17 /* Assets.xcassets */; };
 		1864AB6925A4A2A600AE3A17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1864AB6725A4A2A600AE3A17 /* LaunchScreen.storyboard */; };
 		1864AB7625A4A2FB00AE3A17 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864AB7525A4A2FB00AE3A17 /* GameState.swift */; };
 		1864AB7925A4A30100AE3A17 /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1864AB7825A4A30100AE3A17 /* Sign.swift */; };
-		1864AB8025A4A37A00AE3A17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1864AB7F25A4A37A00AE3A17 /* Main.storyboard */; };
+		1885AFE3281FFA2200E97DC5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885AFE2281FFA2200E97DC5 /* SettingsViewController.swift */; };
+		1885AFE52820395E00E97DC5 /* ScoreboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885AFE42820395E00E97DC5 /* ScoreboardView.swift */; };
+		1885AFE82820496300E97DC5 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885AFE72820496300E97DC5 /* ResultViewController.swift */; };
+		1885AFEB2820546500E97DC5 /* loser.json in Resources */ = {isa = PBXBuildFile; fileRef = 1885AFE92820546500E97DC5 /* loser.json */; };
+		1885AFEC2820546500E97DC5 /* winner.json in Resources */ = {isa = PBXBuildFile; fileRef = 1885AFEA2820546500E97DC5 /* winner.json */; };
+		188FFE9F28206709000B5A43 /* victory_animation.png in Resources */ = {isa = PBXBuildFile; fileRef = 188FFE9828206709000B5A43 /* victory_animation.png */; };
+		188FFEA028206709000B5A43 /* start.png in Resources */ = {isa = PBXBuildFile; fileRef = 188FFE9928206709000B5A43 /* start.png */; };
+		188FFEA128206709000B5A43 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 188FFE9A28206709000B5A43 /* settings.png */; };
+		188FFEA228206709000B5A43 /* victory_game.png in Resources */ = {isa = PBXBuildFile; fileRef = 188FFE9B28206709000B5A43 /* victory_game.png */; };
+		188FFEA328206709000B5A43 /* defeat.png in Resources */ = {isa = PBXBuildFile; fileRef = 188FFE9C28206709000B5A43 /* defeat.png */; };
+		188FFEA428206709000B5A43 /* draw.png in Resources */ = {isa = PBXBuildFile; fileRef = 188FFE9D28206709000B5A43 /* draw.png */; };
+		188FFEA528206709000B5A43 /* victory.png in Resources */ = {isa = PBXBuildFile; fileRef = 188FFE9E28206709000B5A43 /* victory.png */; };
+		188FFEA8282068AD000B5A43 /* defeat_animation.png in Resources */ = {isa = PBXBuildFile; fileRef = 188FFEA6282068AD000B5A43 /* defeat_animation.png */; };
+		188FFEA9282068AD000B5A43 /* defeat_game.png in Resources */ = {isa = PBXBuildFile; fileRef = 188FFEA7282068AD000B5A43 /* defeat_game.png */; };
+		189C340E281C78C600D36AC3 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189C340D281C78C600D36AC3 /* UIColor+Extension.swift */; };
 		189EFE3B25A4A526009428C0 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189EFE3A25A4A526009428C0 /* GameViewController.swift */; };
+		23E892825A3B84BA68AF0501 /* Pods_Rock_Paper_Scissors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFE81DA2B3045F1A2EF97A7B /* Pods_Rock_Paper_Scissors.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1857BEDF25A6034F00B010BA /* Screenshot-main.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Screenshot-main.jpeg"; sourceTree = "<group>"; };
-		1857BEE025A6034F00B010BA /* Screenshot-defeat.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Screenshot-defeat.jpeg"; sourceTree = "<group>"; };
-		1857BEE125A6034F00B010BA /* Screenshot-victory.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Screenshot-victory.jpeg"; sourceTree = "<group>"; };
-		1857BEE225A6034F00B010BA /* Screenshot-draw.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Screenshot-draw.jpeg"; sourceTree = "<group>"; };
 		1864AB5925A4A2A500AE3A17 /* Rock Paper Scissors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rock Paper Scissors.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1864AB5C25A4A2A500AE3A17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1864AB5E25A4A2A500AE3A17 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,8 +41,25 @@
 		1864AB6A25A4A2A600AE3A17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1864AB7525A4A2FB00AE3A17 /* GameState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		1864AB7825A4A30100AE3A17 /* Sign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
-		1864AB7F25A4A37A00AE3A17 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		1885AFE2281FFA2200E97DC5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		1885AFE42820395E00E97DC5 /* ScoreboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardView.swift; sourceTree = "<group>"; };
+		1885AFE72820496300E97DC5 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		1885AFE92820546500E97DC5 /* loser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loser.json; sourceTree = "<group>"; };
+		1885AFEA2820546500E97DC5 /* winner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = winner.json; sourceTree = "<group>"; };
+		188FFE9828206709000B5A43 /* victory_animation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = victory_animation.png; sourceTree = "<group>"; };
+		188FFE9928206709000B5A43 /* start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start.png; sourceTree = "<group>"; };
+		188FFE9A28206709000B5A43 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		188FFE9B28206709000B5A43 /* victory_game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = victory_game.png; sourceTree = "<group>"; };
+		188FFE9C28206709000B5A43 /* defeat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defeat.png; sourceTree = "<group>"; };
+		188FFE9D28206709000B5A43 /* draw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = draw.png; sourceTree = "<group>"; };
+		188FFE9E28206709000B5A43 /* victory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = victory.png; sourceTree = "<group>"; };
+		188FFEA6282068AD000B5A43 /* defeat_animation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defeat_animation.png; sourceTree = "<group>"; };
+		188FFEA7282068AD000B5A43 /* defeat_game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defeat_game.png; sourceTree = "<group>"; };
+		189C340D281C78C600D36AC3 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		189EFE3A25A4A526009428C0 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		746E6CE8FCDC4CD11DFF9EE8 /* Pods-Rock Paper Scissors.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rock Paper Scissors.debug.xcconfig"; path = "Target Support Files/Pods-Rock Paper Scissors/Pods-Rock Paper Scissors.debug.xcconfig"; sourceTree = "<group>"; };
+		7FF37028F00DE4E224AAC549 /* Pods-Rock Paper Scissors.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rock Paper Scissors.release.xcconfig"; path = "Target Support Files/Pods-Rock Paper Scissors/Pods-Rock Paper Scissors.release.xcconfig"; sourceTree = "<group>"; };
+		AFE81DA2B3045F1A2EF97A7B /* Pods_Rock_Paper_Scissors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rock_Paper_Scissors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23E892825A3B84BA68AF0501 /* Pods_Rock_Paper_Scissors.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,10 +77,15 @@
 		1857BEDE25A6033C00B010BA /* Screenshot */ = {
 			isa = PBXGroup;
 			children = (
-				1857BEE025A6034F00B010BA /* Screenshot-defeat.jpeg */,
-				1857BEE225A6034F00B010BA /* Screenshot-draw.jpeg */,
-				1857BEDF25A6034F00B010BA /* Screenshot-main.jpeg */,
-				1857BEE125A6034F00B010BA /* Screenshot-victory.jpeg */,
+				188FFEA6282068AD000B5A43 /* defeat_animation.png */,
+				188FFEA7282068AD000B5A43 /* defeat_game.png */,
+				188FFE9C28206709000B5A43 /* defeat.png */,
+				188FFE9D28206709000B5A43 /* draw.png */,
+				188FFE9A28206709000B5A43 /* settings.png */,
+				188FFE9928206709000B5A43 /* start.png */,
+				188FFE9828206709000B5A43 /* victory_animation.png */,
+				188FFE9B28206709000B5A43 /* victory_game.png */,
+				188FFE9E28206709000B5A43 /* victory.png */,
 			);
 			path = Screenshot;
 			sourceTree = "<group>";
@@ -65,6 +95,8 @@
 			children = (
 				1864AB5B25A4A2A500AE3A17 /* Rock Paper Scissors */,
 				1864AB5A25A4A2A500AE3A17 /* Products */,
+				3DDF22FC2EF9DF881E3AD0FF /* Pods */,
+				2B4E0D1382F036112F19CB1E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,34 +111,72 @@
 		1864AB5B25A4A2A500AE3A17 /* Rock Paper Scissors */ = {
 			isa = PBXGroup;
 			children = (
-				1864AB5C25A4A2A500AE3A17 /* AppDelegate.swift */,
-				1864AB5E25A4A2A500AE3A17 /* SceneDelegate.swift */,
-				1864AB8325A4A39500AE3A17 /* Models */,
-				1864AB8425A4A39C00AE3A17 /* Controllers */,
+				18C6C315281C304100CA2B4D /* Common */,
+				18C6C316281C305600CA2B4D /* Scene */,
+				1864AB8325A4A39500AE3A17 /* Enums */,
+				1885AFE628203BAE00E97DC5 /* Reusable Views */,
 				1857BEDE25A6033C00B010BA /* Screenshot */,
-				1864AB7F25A4A37A00AE3A17 /* Main.storyboard */,
-				1864AB6525A4A2A600AE3A17 /* Assets.xcassets */,
-				1864AB6725A4A2A600AE3A17 /* LaunchScreen.storyboard */,
 				1864AB6A25A4A2A600AE3A17 /* Info.plist */,
 			);
 			path = "Rock Paper Scissors";
 			sourceTree = "<group>";
 		};
-		1864AB8325A4A39500AE3A17 /* Models */ = {
+		1864AB8325A4A39500AE3A17 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
 				1864AB7525A4A2FB00AE3A17 /* GameState.swift */,
 				1864AB7825A4A30100AE3A17 /* Sign.swift */,
 			);
-			path = Models;
+			path = Enums;
 			sourceTree = "<group>";
 		};
-		1864AB8425A4A39C00AE3A17 /* Controllers */ = {
+		1885AFE628203BAE00E97DC5 /* Reusable Views */ = {
+			isa = PBXGroup;
+			children = (
+				1885AFE42820395E00E97DC5 /* ScoreboardView.swift */,
+			);
+			path = "Reusable Views";
+			sourceTree = "<group>";
+		};
+		18C6C315281C304100CA2B4D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1864AB5C25A4A2A500AE3A17 /* AppDelegate.swift */,
+				1864AB5E25A4A2A500AE3A17 /* SceneDelegate.swift */,
+				1864AB6525A4A2A600AE3A17 /* Assets.xcassets */,
+				1864AB6725A4A2A600AE3A17 /* LaunchScreen.storyboard */,
+				189C340D281C78C600D36AC3 /* UIColor+Extension.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		18C6C316281C305600CA2B4D /* Scene */ = {
 			isa = PBXGroup;
 			children = (
 				189EFE3A25A4A526009428C0 /* GameViewController.swift */,
+				1885AFE2281FFA2200E97DC5 /* SettingsViewController.swift */,
+				1885AFE72820496300E97DC5 /* ResultViewController.swift */,
+				1885AFE92820546500E97DC5 /* loser.json */,
+				1885AFEA2820546500E97DC5 /* winner.json */,
 			);
-			path = Controllers;
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		2B4E0D1382F036112F19CB1E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AFE81DA2B3045F1A2EF97A7B /* Pods_Rock_Paper_Scissors.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3DDF22FC2EF9DF881E3AD0FF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				746E6CE8FCDC4CD11DFF9EE8 /* Pods-Rock Paper Scissors.debug.xcconfig */,
+				7FF37028F00DE4E224AAC549 /* Pods-Rock Paper Scissors.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -116,9 +186,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1864AB6D25A4A2A600AE3A17 /* Build configuration list for PBXNativeTarget "Rock Paper Scissors" */;
 			buildPhases = (
+				55755488C27F40B3CDEC9E2E /* [CP] Check Pods Manifest.lock */,
 				1864AB5525A4A2A500AE3A17 /* Sources */,
 				1864AB5625A4A2A500AE3A17 /* Frameworks */,
 				1864AB5725A4A2A500AE3A17 /* Resources */,
+				63868356E95259EE803418DB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -166,17 +238,65 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1857BEE625A6034F00B010BA /* Screenshot-draw.jpeg in Resources */,
-				1857BEE525A6034F00B010BA /* Screenshot-victory.jpeg in Resources */,
-				1857BEE325A6034F00B010BA /* Screenshot-main.jpeg in Resources */,
-				1857BEE425A6034F00B010BA /* Screenshot-defeat.jpeg in Resources */,
 				1864AB6925A4A2A600AE3A17 /* LaunchScreen.storyboard in Resources */,
+				188FFEA428206709000B5A43 /* draw.png in Resources */,
+				188FFEA128206709000B5A43 /* settings.png in Resources */,
+				188FFE9F28206709000B5A43 /* victory_animation.png in Resources */,
 				1864AB6625A4A2A600AE3A17 /* Assets.xcassets in Resources */,
-				1864AB8025A4A37A00AE3A17 /* Main.storyboard in Resources */,
+				188FFEA228206709000B5A43 /* victory_game.png in Resources */,
+				1885AFEC2820546500E97DC5 /* winner.json in Resources */,
+				188FFEA8282068AD000B5A43 /* defeat_animation.png in Resources */,
+				188FFEA028206709000B5A43 /* start.png in Resources */,
+				188FFEA9282068AD000B5A43 /* defeat_game.png in Resources */,
+				188FFEA528206709000B5A43 /* victory.png in Resources */,
+				1885AFEB2820546500E97DC5 /* loser.json in Resources */,
+				188FFEA328206709000B5A43 /* defeat.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		55755488C27F40B3CDEC9E2E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Rock Paper Scissors-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63868356E95259EE803418DB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rock Paper Scissors/Pods-Rock Paper Scissors-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rock Paper Scissors/Pods-Rock Paper Scissors-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rock Paper Scissors/Pods-Rock Paper Scissors-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1864AB5525A4A2A500AE3A17 /* Sources */ = {
@@ -185,9 +305,13 @@
 			files = (
 				189EFE3B25A4A526009428C0 /* GameViewController.swift in Sources */,
 				1864AB7625A4A2FB00AE3A17 /* GameState.swift in Sources */,
+				1885AFE3281FFA2200E97DC5 /* SettingsViewController.swift in Sources */,
 				1864AB7925A4A30100AE3A17 /* Sign.swift in Sources */,
+				189C340E281C78C600D36AC3 /* UIColor+Extension.swift in Sources */,
 				1864AB5D25A4A2A500AE3A17 /* AppDelegate.swift in Sources */,
+				1885AFE52820395E00E97DC5 /* ScoreboardView.swift in Sources */,
 				1864AB5F25A4A2A500AE3A17 /* SceneDelegate.swift in Sources */,
+				1885AFE82820496300E97DC5 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,12 +447,14 @@
 		};
 		1864AB6E25A4A2A600AE3A17 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 746E6CE8FCDC4CD11DFF9EE8 /* Pods-Rock Paper Scissors.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BJFSMC5J9X;
 				INFOPLIST_FILE = "Rock Paper Scissors/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -342,12 +468,14 @@
 		};
 		1864AB6F25A4A2A600AE3A17 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FF37028F00DE4E224AAC549 /* Pods-Rock Paper Scissors.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BJFSMC5J9X;
 				INFOPLIST_FILE = "Rock Paper Scissors/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
