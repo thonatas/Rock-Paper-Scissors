@@ -28,16 +28,6 @@ class SettingsViewController: UIViewController {
         return stackView
     }()
     
-    private let languageLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 23, weight: .regular)
-        label.text = "Linguagem"
-        label.textColor = .black
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
     private let gamesQuantityLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 23, weight: .regular)
@@ -46,15 +36,6 @@ class SettingsViewController: UIViewController {
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
-    }()
-    
-    private let languageStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.spacing = 10
-        stackView.distribution = .fillEqually
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
     }()
     
     private let gamesQuantityStackView: UIStackView = {
@@ -78,28 +59,6 @@ class SettingsViewController: UIViewController {
         imageView.layer.masksToBounds = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
-    }()
-    
-    private lazy var englishButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("EN", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.addTarget(self, action: #selector(languagesButtonTapped(_:)), for: .touchUpInside)
-        button.layer.cornerRadius = 8.0
-        button.tag = 0
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
-    private lazy var portuguesButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("PT-BR", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.addTarget(self, action: #selector(languagesButtonTapped(_:)), for: .touchUpInside)
-        button.layer.cornerRadius = 8.0
-        button.tag = 1
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
     }()
     
     private lazy var threeGamesButton: UIButton = {
@@ -147,11 +106,9 @@ class SettingsViewController: UIViewController {
     }()
     
     // MARK: - Constants and Variables
-    private let languageKey = "languageKey"
     private let gamesKey = "gamesKey"
     private let enabledColor = GameState.defeat.buttonColor
     private let disabledColor = UIColor(hex: "383838").withAlphaComponent(0.4)
-    private var languagesButtons = [UIButton]()
     private var gamesButtons = [UIButton]()
     
     // MARK: - View Life Cycle
@@ -160,7 +117,6 @@ class SettingsViewController: UIViewController {
         self.view.backgroundColor = .black.withAlphaComponent(0.7)
         self.buildViewHierarchy()
         self.buildConstraints()
-        self.languagesButtons = [englishButton, portuguesButton]
         self.gamesButtons = [threeGamesButton, fiveGamesButton, sevenGamesButton]
         self.setInitialUI()
     }
@@ -170,7 +126,6 @@ class SettingsViewController: UIViewController {
 private extension SettingsViewController {
     func setInitialUI() {
         DispatchQueue.main.async {
-            self.languagesButtons.forEach { self.setBackgroundButtonColor(with: $0, key: self.languageKey) }
             self.gamesButtons.forEach { self.setBackgroundButtonColor(with: $0, key: self.gamesKey) }
         }
     }
@@ -178,13 +133,6 @@ private extension SettingsViewController {
     @objc
     func closeTapped() {
         self.dismiss(animated: true)
-    }
-    
-    @objc
-    func languagesButtonTapped(_ sender: UIButton) {
-        UserDefaults.standard.setValue(sender.tag, forKey: languageKey)
-        UserDefaults.standard.synchronize()
-        setInitialUI()
     }
     
     @objc
@@ -215,10 +163,6 @@ private extension SettingsViewController {
         self.view.addSubview(backgroundView)
         backgroundView.addSubview(closeImageView)
         backgroundView.addSubview(mainStackView)
-        mainStackView.addArrangedSubview(languageLabel)
-        mainStackView.addArrangedSubview(languageStackView)
-        languageStackView.addArrangedSubview(englishButton)
-        languageStackView.addArrangedSubview(portuguesButton)
         mainStackView.addArrangedSubview(gamesQuantityLabel)
         mainStackView.addArrangedSubview(gamesQuantityStackView)
         gamesQuantityStackView.addArrangedSubview(threeGamesButton)
