@@ -238,10 +238,10 @@ private extension GameViewController {
     
     func goResultGame() {
         guard let maximumGamesQuantity = maximumGamesQuantity else { return }
-        if userScore == maximumGamesQuantity {
+        if userScore == maximumGamesQuantity/2 + 1 {
             self.resultGame = .victory
         }
-        if robotScore == maximumGamesQuantity {
+        if robotScore == maximumGamesQuantity/2 + 1 {
             self.resultGame = .defeat
         }
     }
